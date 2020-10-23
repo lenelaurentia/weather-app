@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Search</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js">
+    </script>
+    <script
+      src="https://kit.fontawesome.com/72fd8ba420.js"
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-style">
+        <h1 id="location-search-result"></h1>
+        <h2 class="weather-icons">
+          <i class="fas fa-cloud" id="current-icon"></i>
+        </h2>
+        <span class="current-temp" id="current-temp">
+          <br>
+          <br>
+        </span>
+        
+      
+        <p id="current-description"></p>
+
+        <div class="current-weather">
+          <div class="row">
+            <div class="col">
+              <p id="current-highlow"></p>
+            </div>
+            <div class="col">
+              <p id="current-date-time"></p>
+            </div>         
+
+        <hr class="divider-top" />
+
+        <div class="future">
+          <div class="future-days-of-week">
+            <div class="row">
+              <div class="col-sm">Fri</div>
+              <div class="col-sm">Sat</div>
+              <div class="col-sm">Sun</div>
+              <div class="col-sm">Mon</div>
+              <div class="col-sm">Tues</div>
+            </div>
+          </div>
+
+          <div class="weather-icons">
+            <div class="future-weather-icons">
+              <div class="row">
+                <div class="col-sm">
+                  <i class="fas fa-cloud-rain"></i>
+                </div>
+                <div class="col-sm">
+                  <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="col-sm">
+                  <i class="fas fa-sun"></i>
+                </div>
+                <div class="col-sm">
+                  <i class="fas fa-cloud"></i>
+                </div>
+                <div class="col-sm">
+                  <i class="fas fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="future-highlows">
+            <div class="row">
+              <div class="col-sm">15°/10°</div>
+              <div class="col-sm">20°/16°</div>
+              <div class="col-sm">22°/14°</div>
+              <div class="col-sm">16°/10°</div>
+              <div class="col-sm">15°/10°</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-bottom" />
+
+        <span class="units">
+          <a href="#" id="celcius-link">°C</a>
+          |
+          <a href="#" id="fahrenheit-link">°F</a>
+        </span>
+
+        <form id="form-city-search">
+          <div>
+            <input
+              id="search-bar"
+              type="text"
+              placeholder="Enter city"
+              autocomplete="off"
+            />
+            <button class="search-icon">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <button class="current-location" id="current-location">
+          Current Location
+        </button>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
