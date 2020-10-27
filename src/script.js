@@ -1,3 +1,5 @@
+//Get current date and time
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -29,41 +31,6 @@ function formatDate(timestamp) {
   console.log(date);
   return `${hours}:${minutes} ${day}, ${month}`;
 }
-
-//Get current date and time
-
-function formatDate(rightNow) {
-  let hours = rightNow.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = rightNow.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-  let day = days[rightNow.getDay()];
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[rightNow.getMonth()];
-  let date = rightNow.getDate();
-  return `${hours}:${minutes} ${day}, ${month} ${date} `;
-}
-let currentDateTime = document.querySelector("#current-date-time");
-let now = new Date();
-currentDateTime.innerHTML = formatDate(now);
 
 //convert to celcius/fahrenheit
 function convertToFahrenheit(event) {
@@ -119,6 +86,12 @@ function displayWeather(response) {
 
   let dateElement = document.querySelector("#current-date-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute(
+    "src",
+    "http://openweathermap.org/img/wn/10d@2x.png"
+  );
 }
 
 //search for city data
