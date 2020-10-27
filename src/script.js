@@ -1,3 +1,35 @@
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let day = days[date.getDay()];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+  console.log(date);
+  return `${hours}:${minutes} ${day}, ${month}`;
+}
+
 //Get current date and time
 
 function formatDate(rightNow) {
@@ -54,22 +86,39 @@ function convertToCelcius(event) {
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", convertToCelcius);
 
-//display current temperature + city + high/low
+//display current temp + city + high/low
 function displayWeather(response) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
   let tempResult = Math.round(response.data.main.temp);
   currentTemp.innerHTML = `${tempResult}°`;
+
   let cityHeading = document.querySelector("h1");
   cityHeading.innerHTML = response.data.name;
-  let currentHighLow = document.querySelector("#current-highlow");
-  let currentHigh = Math.round(response.data.main.temp_max);
-  let currentLow = Math.round(response.data.main.temp_min);
-  currentHighLow.innerHTML = `${currentHigh}° / ${currentLow}°`;
+  console.log(response.data.main.temp_min);
+
+  let currentHigh = document.querySelector("#current-high");
+  let currentLow = document.querySelector("#current-low");
+  currentHighValue = Math.round(response.data.main.temp_max);
+  currentLowValue = Math.round(response.data.main.temp_min);
+  currentHigh.innerHTML = `High: ${currentHighValue}°`;
+  currentLow.innerHTML = `Low: ${currentLowValue}°`;
+
   let currentDescription = document.querySelector("#current-description");
   let description = response.data.weather[0].description;
   currentDescription.innerHTML = description.toLowerCase();
   console.log(response.data);
+
+  let humidityElement = document.querySelector("#humidity");
+  humidity = Math.round(response.data.main.humidity);
+  humidityElement.innerHTML = `${humidity}%`;
+
+  let windElement = document.querySelector("#wind");
+  wind = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `${wind}km/h`;
+
+  let dateElement = document.querySelector("#current-date-time");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 //search for city data

@@ -1,16 +1,16 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  min-width: 620px;
+  min-width: 520px;
   text-align: center;
-  width: 620px;
+  width: 520px;
 }
 
-.body-style {
+.bod-style {
   background-image: linear-gradient(to top, #9cacb6 0%, #d6e5ec 100%);
-  border-radius: 10px;
+  border-radius: 12px;
   margin: 30px;
-  padding: 30px;
+  padding: 16px 30px 0px 30px;
   color: white;
 }
 
@@ -21,46 +21,59 @@
   margin: 0 auto;
   font-family: "Nunito", sans-serif;
   letter-spacing: 2.5px;
-  font-size: 45px;
+  font-size: 46px;
+  line-height: 70px;
 }
 
 #current-icon {
-  padding: 50px 240px 0 0;
+  padding: 20px 240px 0 0;
   font-size: 60px;
 }
 
 .current-temp {
   text-align: center;
   display: inline-block;
-  font-size: 94px;
-  line-height: 80px;
+  padding: 0px 0px 10px 0px;
+  font-size: 80px;
+  line-height: 60px;
 }
 
 #current-description {
-  font-size: 20px;
-  padding: 15px 0 70px 0;
+  font-size: 14px;
   text-align: center;
 }
 
-#current-highlow {
-  bottom: 0;
-  left: 0;
-  margin: 0 0 8px 0;
-  position: absolute;
-  padding: 0 0 0 10px;
-  font-size: 16px;
+#current-high,
+#current-low {
+  font-size: 12px;
+  text-align: right;
+  margin: 0 auto;
 }
 
 #current-date-time {
-  bottom: 0;
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  padding: 0 10px 0 0;
-  position: absolute;
-  right: 0;
-  text-align: right;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.weather-details {
+  list-style: none;
+  text-align: left;
+  padding: 0px;
+  font-size: 12px;
+}
+
+#current-details-row {
+  padding-left: 4px;
+  position: relative;
+  top: 20px;
+}
+
+#current-highlow-row {
+  padding-right: 4px;
+  position: relative;
+  top: 20px;
+}
 .divider-bottom,
 .divider-top {
   background: white;
@@ -70,10 +83,10 @@
 }
 
 .divider-bottom {
-  margin: 28px 0 5px 0;
+  margin: 14px 0px 6px 0px;
 }
 .divider-top {
-  margin: 0 0 5px 0;
+  margin: 10px 0 5px 0;
 }
 
 .future {
@@ -84,31 +97,28 @@
   display: block;
 }
 
-.row-flex {
-  width: 100%;
-}
-
 .future-days-of-week {
   padding: 16px 0 0 0;
   display: block;
   margin: 0 auto;
   text-align: center;
+  font-size: 12px;
 }
 
 .future-highlows {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 
-.future-weather-icons {
-  font-size: 38px;
+.future-weather-icon {
+  font-size: 28px;
   padding: 10px 0;
 }
 
 .units {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 100;
   text-align: left;
 }
@@ -123,7 +133,7 @@
 }
 
 #form-city-search {
-  padding: 10px 0px 10px 40px;
+  padding: 10px 0px 10px 38px;
 }
 
 .search-icon {
@@ -138,23 +148,23 @@
 #search-bar {
   border-radius: 50px;
   padding: 10px 10px;
-  width: 240px;
+  width: 210px;
   border: white 3px solid;
   background-color: transparent;
   position: relative;
-  margin: 20px 0 10px 35px;
+  margin: 14px 0 2px 12px;
 }
 
 #search-bar:focus {
   color: white;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
 }
 
 #search-bar:placeholder-shown {
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -175,14 +185,13 @@ select,
 #current-location {
   display: block;
   margin: 0 auto;
-  padding: 6px 9px;
+  padding: 4px 8px;
   border-radius: 50px;
   border: white 3px solid;
   background-color: white;
   color: #9cacb6;
-
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #current-location:hover {
@@ -195,7 +204,8 @@ select,
   font-family: "Nunito", sans-serif;
   display: inline-block;
   position: relative;
-  top: 80px;
+  top: 40px;
+  font-size: 12px;
 }
 
 #open-source:hover {
@@ -208,5 +218,6 @@ select,
   font-family: "Nunito", sans-serif;
   display: inline-block;
   position: relative;
-  top: 80px;
+  top: 40px;
+  font-size: 12px;
 }

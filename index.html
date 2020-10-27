@@ -24,74 +24,71 @@
   </head>
   <body>
     <div class="container">
-      <div class="body-style">
-        <h1 id="location-search-result"></h1>
-        <h2 class="weather-icons">
+      <div class="bod-style">
+        <h1 id="location-search-result">---</h1>
+       <h2 id="current-date-time"> </h2>
+        <div class="weather-icons">
           <i class="fas fa-cloud" id="current-icon"></i>
-        </h2>
+        </div>
+
         <span class="current-temp" id="current-temp">
           <br>
-          <br>
         </span>
-        
-      
+    
         <p id="current-description"></p>
 
         <div class="current-weather">
           <div class="row">
-            <div class="col">
-              <p id="current-highlow"></p>
+            <div class="col" id="current-details-row">
+              <ul class="weather-details">
+                <li>Humidity: <span id="humidity">-</span></li>
+                <li>Wind: <span id="wind">-</span></li>
+              </ul>
+             
             </div>
-            <div class="col">
-              <p id="current-date-time"></p>
+            <div class="col" id="current-highlow-row">
+              <p id="current-high">High: -</p>
+              <p id="current-low">Low: -</p>
             </div>         
-
+    
         <hr class="divider-top" />
 
         <div class="future">
           <div class="future-days-of-week">
             <div class="row">
-              <div class="col-sm">Fri</div>
-              <div class="col-sm">Sat</div>
-              <div class="col-sm">Sun</div>
-              <div class="col-sm">Mon</div>
-              <div class="col-sm">Tues</div>
-            </div>
-          </div>
 
-          <div class="weather-icons">
-            <div class="future-weather-icons">
-              <div class="row">
-                <div class="col-sm">
-                  <i class="fas fa-cloud-rain"></i>
-                </div>
-                <div class="col-sm">
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="col-sm">
-                  <i class="fas fa-sun"></i>
-                </div>
-                <div class="col-sm">
-                  <i class="fas fa-cloud"></i>
-                </div>
-                <div class="col-sm">
-                  <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
+              <div class="col-sm">
+                <div class="future-day">Fri</div> 
+                <div><i class="fas fa-cloud-rain future-weather-icon"></i></div>
+                <div class="future-highlows">15°/10°</div>
+              </div>
+
+              <div class="col-sm">
+                <div>Sat</div>
+                <div><i class="fas fa-cloud-sun future-weather-icon"></i></div>
+                <div class="future-highlows">20°/16°</div>
+              </div>
+
+              <div class="col-sm">
+                <div>Sun</div>
+                <div><i class="fas fa-sun future-weather-icon"></i></div>
+                <div class="future-highlows">22°/14°</div>
+              </div>
+
+              <div class="col-sm">
+                <div>Mon</div>
+                <div><i class="fas fa-cloud future-weather-icon"></i></div>
+                <div class="future-highlows">16°/10°</div>
+              </div>
+
+              <div class="col-sm">
+                <div>Tues</div>
+                <div><i class="fas fa-cloud-showers-heavy future-weather-icon"></i></div>
+                <div class="future-highlows">15°/10°</div>
               </div>
             </div>
           </div>
-
-          <div class="future-highlows">
-            <div class="row">
-              <div class="col-sm">15°/10°</div>
-              <div class="col-sm">20°/16°</div>
-              <div class="col-sm">22°/14°</div>
-              <div class="col-sm">16°/10°</div>
-              <div class="col-sm">15°/10°</div>
-            </div>
-          </div>
         </div>
-
         <hr class="divider-bottom" />
 
         <span class="units">
@@ -121,10 +118,7 @@
         
     </div>
     <a  id="open-source" href="https://github.com/lenelaurentia/weather-app" target="blank">Open-source code</a>
-<p id="name">by Lene Nohr</p>  
-    
+    <p id="name">by Lene Nohr</p>  
     <script src="src/script.js"></script>
-
   </body>
-
   </html>
