@@ -33,32 +33,39 @@ function formatDate(timestamp) {
 }
 
 //convert to celcius/fahrenheit
-function convertToFahrenheit(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
-  let temperature = currentTemp.innerHTML;
-  temperature = Number(temperature);
-  currentTemp.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(fahrenheitTemperature);
 }
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-function convertToCelcius(event) {
+function displayCelcius(event) {
   event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let currentTemp = document.querySelector("#current-temp");
-  let temperature = currentTemp.innerHTML;
-  temperature = Number(temperature);
-  currentTemp.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  currentTemp.innerHTML = Math.round(celciusTemperature);
 }
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
 let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", convertToCelcius);
+celciusLink.addEventListener("click", displayCelcius);
 
 //display current temp + city + high/low
 function displayWeather(response) {
+  celciusTemperature = response.data.main.temp;
+
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
-  let tempResult = Math.round(response.data.main.temp);
-  currentTemp.innerHTML = `${tempResult}°`;
+  let tempResult = Math.round(celciusTemperature);
+  currentTemp.innerHTML = tempResult;
 
   let cityHeading = document.querySelector("h1");
   cityHeading.innerHTML = response.data.name;
@@ -112,6 +119,10 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+let formCitySearch = document.querySelector("#form-city-search");
+formCitySearch.addEventListener("submit", handleSubmit);
+
+searchCity("New York");
 // Geolocation
 
 function showPosition(position) {
@@ -129,9 +140,6 @@ function showPosition(position) {
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-let formCitySearch = document.querySelector("#form-city-search");
-formCitySearch.addEventListener("submit", handleSubmit);
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentPosition);

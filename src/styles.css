@@ -121,10 +121,16 @@
   font-weight: 100;
   text-align: left;
 }
+.units .active {
+  color: black;
+  cursor: default;
+}
 
+.units .active:hover {
+  text-decoration: none;
+}
 #celcius-link,
 #fahrenheit-link {
-  color: white;
   background: transparent;
   border: none;
   padding: 0;
