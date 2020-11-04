@@ -29,7 +29,7 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
   console.log(date);
-  return `${hours}:${minutes} ${day}, ${month}`;
+  return `Last updated ${hours}:${minutes} ${day}, ${month}`;
 }
 
 //convert to celcius/fahrenheit

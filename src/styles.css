@@ -7,11 +7,12 @@
 }
 
 .bod-style {
-  background-image: linear-gradient(to top, #9cacb6 0%, #d6e5ec 100%);
-  border-radius: 12px;
+  border-radius: 15px;
   margin: 30px;
+  height: 670px;
+
   padding: 16px 30px 0px 30px;
-  color: white;
+  border: solid #c2c8cf 2px;
 }
 
 #location-search-result {
@@ -40,6 +41,7 @@
 #current-description {
   font-size: 14px;
   text-align: center;
+  color: #6d7888;
 }
 
 #current-high,
@@ -50,8 +52,10 @@
 }
 
 #current-date-time {
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
+  color: #96a1b1;
+  padding-top: 20px;
   margin: 0 auto;
 }
 
@@ -66,12 +70,14 @@
   padding-left: 4px;
   position: relative;
   top: 20px;
+  color: #96a1b1;
 }
 
 #current-highlow-row {
   padding-right: 4px;
   position: relative;
   top: 20px;
+  color: #96a1b1;
 }
 .divider-bottom,
 .divider-top {
@@ -89,6 +95,7 @@
 }
 
 .future {
+  color: #6d7888;
   font-family: "Inter", sans-serif;
   letter-spacing: 1.5px;
   text-align: center;
@@ -112,6 +119,7 @@
 .future-weather-icon {
   font-size: 28px;
   padding: 10px 0;
+  color: black;
 }
 
 .units {
@@ -142,26 +150,25 @@
 }
 
 .search-icon {
-  color: white;
   padding: 5px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 18px;
+  color: #627186;
 }
 
 #search-bar {
-  border-radius: 50px;
+  border-radius: 12px;
   padding: 10px 10px;
   width: 210px;
-  border: white 3px solid;
+  border: 3px solid;
   background-color: transparent;
   position: relative;
   margin: 14px 0 2px 12px;
 }
 
 #search-bar:focus {
-  color: white;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -173,43 +180,41 @@
   text-align: center;
 }
 
-::placeholder {
-  color: white;
-}
-
 input:focus::placeholder {
   color: transparent;
 }
+
 input,
 select,
 #search-bar {
-  color: white;
   text-align: center;
+  color: lightslategrey;
+  border: solid 2px;
 }
 
 #current-location {
   display: block;
   margin: 0 auto;
-  padding: 4px 8px;
+  padding: 12px 18px;
   border-radius: 50px;
-  border: white 3px solid;
-  background-color: white;
-  color: #9cacb6;
+  border: none;
+  background-color: #3a4867;
+  color: whitesmoke;
   font-family: "Inter", sans-serif;
   font-size: 12px;
 }
 
 #current-location:hover {
-  color: grey;
+  background-color: #627186;
   transition: all 200ms ease-in-out;
 }
 
 #open-source {
-  color: rgb(81, 81, 153);
+  color: #3a4867;
   font-family: "Nunito", sans-serif;
-  display: inline-block;
   position: relative;
-  top: 40px;
+  top: 25px;
+  right: 120px;
   font-size: 12px;
 }
 
@@ -223,6 +228,7 @@ select,
   font-family: "Nunito", sans-serif;
   display: inline-block;
   position: relative;
-  top: 40px;
+  top: 25px;
+  right: 120px;
   font-size: 12px;
 }
