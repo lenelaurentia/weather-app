@@ -31,9 +31,15 @@
           <img src="" alt="" id="current-icon">
         </div>
 
-        <span class="current-temp" id="current-temp">
-          <br>
-        </span>
+        <div id="current-div">
+          <div class="current-temp" id="current-temp">
+          </div>
+          <div class="units">
+          <a href="#" id="celcius-link" class="active">°C</a>
+          |
+          <a href="#" id="fahrenheit-link">°F</a>
+          </div>
+        </div>
     
         <p id="current-description"></p>
 
@@ -59,12 +65,7 @@
         </div>
         <hr class="divider-bottom" />
 
-        <span class="units">
-          <a href="#" id="celcius-link" class="active">°C</a>
-          |
-          <a href="#" id="fahrenheit-link">°F</a>
-        </span>
-
+        
         <form id="form-city-search">
           <div>
             <input
@@ -78,6 +79,7 @@
             </button>
           </div>
         </form>
+
         <button class="current-location" id="current-location">
           Current Location
         </button>

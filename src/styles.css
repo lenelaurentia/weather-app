@@ -26,15 +26,43 @@
 }
 
 #current-icon {
-  padding: 0px 220px 0 0;
+  padding: 10px 210px 0 0;
 }
 
 .current-temp {
   text-align: center;
   display: inline-block;
-  padding: 0px 0px 10px 0px;
+  padding: 0px 0px 10px 38px;
   font-size: 80px;
   line-height: 60px;
+  float: left;
+}
+
+#current-div {
+  display: inline-block;
+}
+
+.units {
+  display: inline-block;
+  font-size: 15px;
+}
+
+#celcius-link,
+#fahrenheit-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-weight: 400;
+}
+
+.units .active {
+  color: black;
+  cursor: default;
+  font-weight: bolder;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
 
 #current-description {
@@ -118,29 +146,6 @@
   margin: 0 auto;
 }
 
-.units {
-  display: block;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  font-weight: 100;
-  text-align: left;
-}
-.units .active {
-  color: black;
-  cursor: default;
-}
-
-.units .active:hover {
-  text-decoration: none;
-}
-#celcius-link,
-#fahrenheit-link {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-weight: 400;
-}
-
 #form-city-search {
   padding: 10px 0px 10px 38px;
 }
@@ -156,12 +161,12 @@
 
 #search-bar {
   border-radius: 12px;
-  padding: 10px 10px;
+  padding: 10px;
   width: 210px;
   border: 3px solid;
   background-color: transparent;
   position: relative;
-  margin: 14px 0 2px 12px;
+  margin: 14px 0 2px 60px;
 }
 
 #search-bar:focus {
