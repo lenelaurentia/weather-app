@@ -13,23 +13,20 @@ function formatDate(timestamp) {
   let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
 
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[date.getMonth()];
   console.log(date);
-  return `Last updated ${hours}:${minutes} ${day}, ${month}`;
+  return `Last updated ${formatHours(timestamp)} ${day}`;
+}
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 }
 
 //convert to celcius/fahrenheit
@@ -104,6 +101,30 @@ function displayWeather(response) {
 
 //search for city data
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+   <div class="col-2">
+     <div class="future-day">
+        ${formatHours(forecast.dt * 1000)}
+     </div>
+     <img id="forecast-icon"
+     src= "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+     />
+      <div class="future-highlows">
+      <strong>${Math.round(forecast.main.temp_max)}°</strong>
+      ${Math.round(forecast.main.temp_min)}°
+     </div>
+   </div>
+  `;
+  }
+}
+
 function searchCity(city) {
   let units = "metric";
   let apiKey = "4630bdec4a9dba06ebc0c195b85646bc";
@@ -111,6 +132,9 @@ function searchCity(city) {
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
