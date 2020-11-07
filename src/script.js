@@ -1,4 +1,4 @@
-//Get current date and time
+//get current date and time
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -30,6 +30,7 @@ function formatHours(timestamp) {
 }
 
 //convert to celcius/fahrenheit
+
 function displayFahrenheit(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
@@ -55,7 +56,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelcius);
 
-//display current temp + city + high/low
+//display city + current (temp + icon + description + details + high/low + time)
+
 function displayWeather(response) {
   celciusTemperature = response.data.main.temp;
 
@@ -88,7 +90,7 @@ function displayWeather(response) {
   wind = Math.round(response.data.wind.speed);
   windElement.innerHTML = `${wind}km/h`;
 
-  let dateElement = document.querySelector("#current-date-time");
+  let dateElement = document.querySelector("#update-time");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   let iconElement = document.querySelector("#current-icon");
@@ -99,7 +101,7 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-//search for city data
+//display forecast (hours + icon + high/low)
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
@@ -110,7 +112,7 @@ function displayForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
    <div class="col-2">
-     <div class="future-day">
+     <div class="forecast-hours">
         ${formatHours(forecast.dt * 1000)}
      </div>
      <img id="forecast-icon"
@@ -124,6 +126,8 @@ function displayForecast(response) {
   `;
   }
 }
+
+//search for city
 
 function searchCity(city) {
   let units = "metric";
@@ -143,11 +147,12 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-let formCitySearch = document.querySelector("#form-city-search");
+let formCitySearch = document.querySelector("#search-form");
 formCitySearch.addEventListener("submit", handleSubmit);
 
-searchCity("New York");
-// Geolocation
+searchCity("Vancouver");
+
+// geolocation
 
 function showPosition(position) {
   console.log(position);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,11 +23,12 @@
       crossorigin="anonymous">
     </script>
   </head>
+
   <body>
     <div class="container">
       <div class="bod-style">
-        <h1 id="location-search-result">---</h1>
-    
+        
+        <h1 id="location"></h1>
         <div class="weather-icons">
           <img src="" alt="" id="current-icon">
         </div>
@@ -35,60 +37,58 @@
           <div class="current-temp" id="current-temp">
           </div>
           <div class="units">
-          <a href="#" id="celcius-link" class="active">°C</a>
-          |
-          <a href="#" id="fahrenheit-link">°F</a>
+            <a href="#" id="celcius-link" class="active">°C</a>
+            |
+            <a href="#" id="fahrenheit-link">°F</a>
           </div>
         </div>
     
-        <p id="current-description"></p>
+        <div id="current-description"></div>
 
-        <div class="current-weather">
-          <div class="row">
-            <div class="col" id="current-details-row">
-              <ul class="weather-details">
-                <li>Humidity: <span id="humidity">-</span></li>
-                <li>Wind: <span id="wind">-</span></li>
-              </ul>
-             
+        <div class="row">
+          <div class="col" id="current-details">
+            <ul id="humidity-wind">
+              <li>Humidity: <span id="humidity">-</span>
+              </li>
+              <li>Wind: <span id="wind">-</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col" id="current-highlow">
+            <div id="current-high">High:
             </div>
-            <div class="col" id="current-highlow-row">
-              <p id="current-high">High: -</p>
-              <p id="current-low">Low: -</p>
-            </div>         
-    
-        <hr class="divider-top" />
-
-        <div class="future">
-          <div class="row future-days-of-week" id="forecast">             
+            <div id="current-low">Low:               
           </div>
-        </div>
-        <hr class="divider-bottom" />
+        </div>   
 
-        
-        <form id="form-city-search">
-          <div class="form-group">
-            <input
+        <hr id="divider-top" />
+
+        <div class="bottom">
+          <div class="row forecast" id="forecast">             
+          </div>
+          <hr id="divider-bottom" />
+          <form id="search-form">
+              <input
               id="search-bar"
               type="text"
               placeholder="Enter city"
               autocomplete="off"
               class="form-control"  
-            />
-            <button type="button" class="btn btn-primary search-icon">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-        
-        <button type="button" class="btn btn-primary current-location" id="current-location">
+              />
+              <button type="submit" value="search" class="btn btn-primary" id="search-icon">
+                <i class="fas fa-search"></i>
+              </button>
+          </form>
+
+          <button  class="btn btn-primary" id="current-location">
           Current Location
-        </button>
-        
-      </div>
-        <div id="current-date-time">
+          </button>
         </div>
-    </div>
+        
+        <div id="update-time">
+        </div>
+      </div>
+
     <a  id="open-source" href="https://github.com/lenelaurentia/weather-app" target="blank">Open-source code</a>
     <p id="name">by Lene Nohr</p>  
     <script src="src/script.js"></script>
