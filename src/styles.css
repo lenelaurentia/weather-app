@@ -160,6 +160,7 @@
   display: inline-block;
   border-radius: 25px;
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .search-icon:hover {
@@ -216,6 +217,7 @@ select,
   color: whitesmoke;
   font-family: "Inter", sans-serif;
   font-size: 12px;
+  cursor: pointer;
 }
 
 #current-location:hover {
